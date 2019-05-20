@@ -14,9 +14,7 @@ def elegirPalabra():
         respuesta = palabra
     return respuesta
 #nota al volver a correr el programa, las palabras recien agregadas se pierden y solo agrega las nuevas
-def agregarPalabra():
-    print("Palabara a agregar: ")
-    nuevaPalabra = str(input())
+def agregarDiccionario(nuevaPalabra):
     diccionario.add(nuevaPalabra)
 
 def dividirPalabra(respuesta):
@@ -70,10 +68,10 @@ def analizarRespuesta(c,a,f,p):
 
 #hay un detalle en el metodo analizarRespuesta por que solo arroja la ultima posicion obtenida, 
 #pero si busca todas las coincidencias
-p,a,f = analizarRespuesta(['h','o','l','o'],a,f,p)
-print(a)
-print(f)
-print(p)
+# p,a,f = analizarRespuesta(['h','o','l','o'],a,f,p)
+# print(a)
+# print(f)
+# print(p)
 # prueba = ["hola","adios"]
 # print(prueba[0])
 
