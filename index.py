@@ -1,16 +1,16 @@
 from webui import WebUI
 from flask import Flask, render_template    
-from flask_debugtoolbar import DebugToolbarExtension
+#from flask_debugtoolbar import DebugToolbarExtension
 from flask import request
 import metodos
 
 app = Flask(__name__)
 ui = WebUI(app, debug=True)
-app.debug = True
+#app.debug = True
 
-app.config['SECRET_KEY'] = '123'
+#app.config['SECRET_KEY'] = '123'
 
-toolbar = DebugToolbarExtension(app)
+#toolbar = DebugToolbarExtension(app)
 
 # @app.route('/')
 # def home():
@@ -38,4 +38,4 @@ def agregarPalabra():
     return render_template('agregarPalabra.html')
 
 if __name__ == '__main__':
-    app.run()
+    ui.run()

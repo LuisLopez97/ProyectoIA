@@ -2,9 +2,9 @@
 {% block content %}
     <h1>Agregar palabra a adivinar</h1>
     <br>
-    <form class="centrar-texto" action="" method="POST">
+    <form class="centrar-texto"  action="" method="POST">
         <label for="palabra">Palabra a agregar:  </label>
-        <input id = "palabra" name = "palabra" type = "text">
+        <input id = "palabra" name = "palabra" type = "text" pattern="[A-Z a-z]*">
         <br><br>
         <input type="submit" value="Agregar">
     </form>
