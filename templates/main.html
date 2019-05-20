@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div>
+    <h1>Juego del ahorcado</h1>
+    <div id="cuerpo">
+        <img src="{{ url_for('static',filename='img/imagen_cuerpo_0.png') }}" alt="">
+    </div>
+    <div class="centrar-texto">
+        <p>aqui van las letras a adivinar</p>
+        <div class="letras">
+            <input type="text" class="linea">
+            <input type="text" class="linea">
+            <input type="text" class="linea">
+            <input type="text" class="linea">
+            <br><br>
+        </div>
+    </div>
+    <div id="teclado">
+        <div class="centrar">
+            <button class="letra">Q</button>
+            <button class="letra">W</button>
+            <button class="letra">E</button>
+            <button class="letra">R</button>
+            <button class="letra">T</button>
+            <button class="letra">Y</button>
+            <button class="letra">U</button>
+            <button class="letra">I</button>
+            <button class="letra">O</button>
+            <button class="letra">P</button>
+            <br><br>
+            <button class="letra">A</button>
+            <button class="letra">S</button>
+            <button class="letra">D</button>
+            <button class="letra">F</button>
+            <button class="letra">G</button>
+            <button class="letra">H</button>
+            <button class="letra">J</button>
+            <button class="letra">K</button>
+            <button class="letra">L</button>
+            <button class="letra">Ñ</button>
+            <br><br>
+            <button class="letra">Z</button>
+            <button class="letra">X</button>
+            <button class="letra">C</button>
+            <button class="letra">V</button>
+            <button class="letra">B</button>
+            <button class="letra">N</button>
+            <button class="letra">M</button>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1>Juego del ahorcado</h1>
+    <br><br>
+    <div class="centrar-texto">
+    <div>
+        <a class="btn btn-primary btn-lg letra-grande" href="{{url_for('main')}}">Jugar</a>
+        <br><br>
+        <a class="btn btn-primary btn-lg letra-grande" href="{{url_for('agregarPalabra')}}">Ingresar palabra</a>
+    </div>
+    </div>
+    
+{% endblock %}
