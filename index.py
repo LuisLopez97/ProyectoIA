@@ -1,12 +1,17 @@
 from webui import WebUI
-from flask import Flask, render_template    
+from flask import Flask, render_template
 #from flask_debugtoolbar import DebugToolbarExtension
 from flask import request
-import metodos
+import metodos, random
+
+# acierto = 0
+# fallo= 0
+# posiciones = "vacio"
+# c = []
 
 app = Flask(__name__)
 ui = WebUI(app, debug=True)
-#app.debug = True
+app.debug = True
 
 #app.config['SECRET_KEY'] = '123'
 
@@ -15,21 +20,25 @@ ui = WebUI(app, debug=True)
 # @app.route('/')
 # def home():
 #     return render_template('home.html')
-
+palabra=""
 @app.route('/')
 def home():
     return render_template('inicio.html')
 
 @app.route('/main')
 def main():
-    return render_template('main.html')
+    palabra = metodos.elegirPalabra()
+    print(palabra)
+    c=metodos.dividirPalabra(palabra)
+    tamaño=metodos.obtenerTamaño(palabra)
+    return render_template('main.html', tamaño=tamaño)
 
 @app.route('/about')
 
 def about():
     return render_template('about.html')
 
-@app.route('/agregarPalabra', methods = ['POST', 'GET'])   
+@app.route('/agregarPalabra', methods = ['POST', 'GET'])
 def agregarPalabra():
     tamaño = 0
     if request.method == 'POST':
@@ -49,6 +58,14 @@ def recibir():
         print("entro")
         letra = request.args.get('letra')
         print(letra)
+        #acierto=0
+        #fallo=0
+        #posiciones="vacio"
+        c=metodos.dividirPalabra(palabra)
+        print(c)
+        p,metodos.a,metodos.f = metodos.analizarRespuesta(c,letra,metodos.a,metodos.f,metodos.p)
+        print(metodos.a)
+        print(metodos.f)
     else:
         print("no entro")
     return "hola 2"

@@ -1,5 +1,6 @@
 #esto es un set
-diccionario = {"hola", "adios", "entrada","a","b","c","d","e","f","g","h","y","j"}
+import random
+diccionario = ["hala", "adios", "entrada"]
 #fallos(extremidades)
 f = 0
 #aciertos
@@ -8,27 +9,31 @@ a = 0
 p = "vacio"
 #respuesta
 r = "vacio"
+#contenido
+c = []
 def elegirPalabra():
+    random.shuffle(diccionario)
     respuesta = ""
     for palabra in diccionario:
         respuesta = palabra
     return respuesta
 #nota al volver a correr el programa, las palabras recien agregadas se pierden y solo agrega las nuevas
 def agregarDiccionario(nuevaPalabra):
-    diccionario.add(nuevaPalabra)
+    diccionario.append(nuevaPalabra)
 
 def dividirPalabra(respuesta):
     #contenido
-    c = []
+    #c = []
     for x  in range(len(respuesta)):
         c.append(respuesta[x])
     return c
 def obtenerTamaño(palabra):
     return len(palabra)
 
-def analizarRespuesta(c,a,f,p):
-    print("Diga una letra")
-    r = str(input())
+
+def analizarRespuesta(c,r,a,f,p):
+    # print("Diga una letra")
+    # r = str(input())
     p = "vacio"
     for x in range(len(c)):
         if(c[x]==r):
@@ -45,7 +50,7 @@ def analizarRespuesta(c,a,f,p):
         # try:
         #     p = (c.index(r))+1
         #     a+=1
-        #     #llamar a ganar  
+        #     #llamar a ganar
         # except:
         #     p = "vacio"
         #     f+=1
