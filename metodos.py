@@ -1,6 +1,6 @@
 #esto es un set
 import random
-diccionario = ["hola", "adios", "entrada","a","b"]
+diccionario = ["hala", "adios", "entrada"]
 #fallos(extremidades)
 f = 0
 #aciertos
@@ -9,6 +9,8 @@ a = 0
 p = "vacio"
 #respuesta
 r = "vacio"
+#contenido
+c = []
 def elegirPalabra():
     random.shuffle(diccionario)
     respuesta = ""
@@ -21,7 +23,7 @@ def agregarDiccionario(nuevaPalabra):
 
 def dividirPalabra(respuesta):
     #contenido
-    c = []
+    #c = []
     for x  in range(len(respuesta)):
         c.append(respuesta[x])
     return c

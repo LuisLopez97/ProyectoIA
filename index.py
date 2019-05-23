@@ -55,13 +55,14 @@ def recibir():
         print("entro")
         letra = request.args.get('letra')
         print(letra)
-        acierto=0
-        fallo=0
-        posiciones="vacio"
+        #acierto=0
+        #fallo=0
+        #posiciones="vacio"
         c=metodos.dividirPalabra(palabra)
-        posiciones,metodos.a,fallo = metodos.analizarRespuesta(c,letra,metodos.a,fallo,posiciones)
+        print(c)
+        p,metodos.a,metodos.f = metodos.analizarRespuesta(c,letra,metodos.a,metodos.f,metodos.p)
         print(metodos.a)
-        print(fallo)
+        print(metodos.f)
     else:
         print("no entro")
     return "hola 2"
