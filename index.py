@@ -40,7 +40,11 @@ def agregarPalabra():
 @app.route('/recibir', methods = ['POST','GET'])
 def recibir():
     if request.method == 'GET':
+        print("entro")
         letra = request.args.get('letra')
         print(letra)
+    else:
+        print("no entro")
+    return "hola 2"
 if __name__ == '__main__':
-    ui.run()
+    app.run()
