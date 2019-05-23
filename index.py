@@ -38,7 +38,10 @@ def agregarPalabra():
         print(metodos.diccionario)
         tamaño = metodos.obtenerTamaño(palabra)
         print(tamaño)
-    return render_template('agregarPalabra.html', tamaño=tamaño)
+        return render_template('main.html', tamaño=tamaño)
+    else:
+        return render_template('agregarPalabra.html')
+   
 
 @app.route('/recibir', methods = ['POST','GET'])
 def recibir():
