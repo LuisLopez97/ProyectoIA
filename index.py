@@ -31,11 +31,14 @@ def about():
 
 @app.route('/agregarPalabra', methods = ['POST', 'GET'])   
 def agregarPalabra():
+    tamaño = 0
     if request.method == 'POST':
         palabra = request.form['palabra']
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
-    return render_template('agregarPalabra.html')
+        tamaño = metodos.obtenerTamaño(palabra)
+        print(tamaño)
+    return render_template('agregarPalabra.html', tamaño=tamaño)
 
 @app.route('/recibir', methods = ['POST','GET'])
 def recibir():
