@@ -1,3 +1,4 @@
 #ignorar archivos de Visual Code
 .vscode/
 _pycache_/
+__pycache__/metodos.cpython-37.pyc
