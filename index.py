@@ -37,5 +37,10 @@ def agregarPalabra():
         print(metodos.diccionario)
     return render_template('agregarPalabra.html')
 
+@app.route('/recibir', methods = ['POST','GET'])
+def recibir():
+    if request.method == 'GET':
+        letra = request.args.get('letra')
+        print(letra)
 if __name__ == '__main__':
     ui.run()
