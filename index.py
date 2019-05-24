@@ -28,9 +28,11 @@ def home():
 
 @app.route('/main')
 def main():
+    metodos.c=[]
     palabra = metodos.elegirPalabra()
     print(palabra)
     metodos.c=metodos.dividirPalabra(palabra)
+    #print("prueba c ",metodos.c)
     tamaño=metodos.obtenerTamaño(palabra)
     return render_template('main.html', tamaño=tamaño)
 
@@ -43,6 +45,7 @@ def about():
 def agregarPalabra():
     tamaño = 0
     if request.method == 'POST':
+        metodos.c=[]
         palabra = request.form['palabra']
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
@@ -59,7 +62,8 @@ def recibir():
     if request.method == 'GET':
         letra = request.args.get('letra')
         #c = metodos.dividirPalabra(palabra)
-        print(metodos.c)
+        
+        #print(metodos.c)
         metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(metodos.c, letra, metodos.a, metodos.f, metodos.p)
         
         # parametros = {'letra': letra, 'posicion' = str(metodos.p)}
