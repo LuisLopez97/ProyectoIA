@@ -11,7 +11,7 @@ function generarEspacios(longitudPalabra) {
         element.appendChild(input);
     }
 }
-
+var contador = 1;
 $(document).ready(function(){
     $(".letra").click(function (event) {
         // event.preventDefault();
@@ -25,10 +25,26 @@ $(document).ready(function(){
             success: function (data) {
                 console.log(data.letra);
                 console.log(data.posicion);
-                for (let i = 0; i < data.posicion.length; i++) {
-                    var espacio = document.getElementById( data.posicion[i] );
-                    espacio.value = data.letra;
+                if(data.posicion.length!=0){
+                    console.log("acertaste");
+                    for (let i = 0; i < data.posicion.length; i++) {
+                        var espacio = document.getElementById( data.posicion[i] );
+                        espacio.value = data.letra;
+                    }
                 }
+                else{
+                    console.log("fallaste");
+                    var cuerpo = document.getElementById('cuerpo');
+                    var imagen = document.getElementById('imagen');
+                    cuerpo.removeChild(imagen);
+                    var img = document.createElement('img');
+                    img.setAttribute('src','/static/img/imagen_cuerpo_'+ contador+ '.png');
+                    img.setAttribute('id','imagen')
+                    cuerpo.appendChild(img);
+                    contador++;
+
+                }
+                
             }
         });
     })
