@@ -6,7 +6,8 @@
         <img id="imagen" src="{{ url_for('static',filename='img/imagen_cuerpo_0.png') }}" alt="">
     </div>
     <div class="centrar-texto">
-        <p>aqui van las letras a adivinar</p>
+        <!-- <p>aqui van las letras a adivinar</p> -->
+        <br>
         <div class="letras" id="espacios">
         </div>
         <br><br>
@@ -44,6 +45,7 @@
             <button class="letra" id="z" name="z" value="z">Z</button>
         </div>
     </div>
+    <input type="hidden" name="" id="size" value="{{tamaño}}">
 </div>
 <script type="text/javascript">
     generarEspacios({{tamaño}})

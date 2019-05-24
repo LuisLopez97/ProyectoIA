@@ -11,6 +11,7 @@ function generarEspacios(longitudPalabra) {
     }
 }
 var contador = 1;
+var aciertos = 0;
 $(document).ready(function(){
     $(".letra").click(function (event) {
         // event.preventDefault();
@@ -25,14 +26,18 @@ $(document).ready(function(){
                 console.log(data.letra);
                 console.log(data.posicion);
                 if(data.posicion.length!=0){
-                    console.log("acertaste");
+                    // console.log("acertaste");
                     for (let i = 0; i < data.posicion.length; i++) {
                         var espacio = document.getElementById( data.posicion[i] );
                         espacio.value = data.letra;
+                        aciertos++;
+                    }
+                    if(aciertos==$("#size").val()){
+                        window.location="/ganar";
                     }
                 }
                 else{
-                    console.log("fallaste");
+                    // console.log("fallaste");
                     var cuerpo = document.getElementById('cuerpo');
                     var imagen = document.getElementById('imagen');
                     cuerpo.removeChild(imagen);
@@ -41,6 +46,12 @@ $(document).ready(function(){
                     img.setAttribute('id','imagen')
                     cuerpo.appendChild(img);
                     contador++;
+                    // console.log(aciertos);
+                    
+                    if(contador==7){
+                        window.location="/perder";
+                    }
+                    
 
                 }
                 

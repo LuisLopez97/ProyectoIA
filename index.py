@@ -66,9 +66,23 @@ def recibir():
         
         #print(metodos.c)
         metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(metodos.c, letra, metodos.a, metodos.f, metodos.p)
+        # if(metodos.a==tamaño):
+        #     return render_template('ganar.html')
+        
+        if(metodos.f==6):
+            return render_template('perder.html')
+        
         
         # parametros = {'letra': letra, 'posicion' = str(metodos.p)}
     return jsonify({'letra': letra, 'posicion': metodos.p})
+
+@app.route('/ganar')
+def ganar():
+        return render_template('ganar.html')
+
+@app.route('/perder')
+def perder():
+        return render_template('perder.html')
 
 if __name__ == '__main__':
     app.run() 
