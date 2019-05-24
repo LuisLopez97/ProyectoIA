@@ -1,6 +1,6 @@
 #esto es un set
 import random
-diccionario = ["hala", "adios", "entrada"]
+diccionario = ["hola", "adios", "entrada","papaya","melon","pizza","balon","futbol","software","virus","tren","tonto","listo","blanco","negro"]
 #fallos(extremidades)
 f = 0
 #aciertos

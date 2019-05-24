@@ -1,13 +1,18 @@
-{% extends "layout.html" %}
-{% block content %}
-    <h1>Juego del ahorcado</h1>
-    <br><br>
-    <div class="centrar-texto">
+{% extends "layout.html" %} {% block content %}
+<h1>Juego del ahorcado</h1>
+<br><br>
+<div class="centrar-texto">
     <div>
-        <a class="btn btn-primary btn-lg letra-grande" href="{{url_for('main')}}">Jugar</a>
+        <a class="btn btn-primary btn-lg letra-grande" href="{{url_for('main')}}">
+            Jugar
+            <img id="btinicio" src="{{ url_for('static',filename='img/ahorcado.png') }}" alt="">
+        </a>
         <br><br>
-        <a class="btn btn-primary btn-lg letra-grande" href="{{url_for('agregarPalabra')}}">Ingresar palabra</a>
+        <a class="btn btn-info btn-lg letra-grande" href="{{url_for('agregarPalabra')}}">
+            Ingresar palabra
+            <img id="btinicio" src="{{ url_for('static',filename='img/diccionario.png') }}" alt="">
+        </a>
     </div>
-    </div>
-    
+</div>
+
 {% endblock %}

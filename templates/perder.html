@@ -1,4 +1,11 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout.html" %} {% block content %}
 <h1>Perdiste</h1>
-{% endblock %}
+<div class="centrar-texto">
+    <img id="" src="{{ url_for('static',filename='img/perder.png') }}" alt="">
+    <div>
+        <a class="btn btn-danger btn-lg letra-grande" href="/">
+            Aceptar
+        </a>
+    </div>
+</div>
+<link rel="stylesheet" href="{{ url_for('static',filename='css/perder.css') }}"> {% endblock %}

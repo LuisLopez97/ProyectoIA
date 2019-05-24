@@ -1,10 +1,13 @@
-body{
-    background: #8360c3;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
+body {
+    background: #8360c3;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-#teclado{
+#teclado {
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
@@ -12,7 +15,8 @@ body{
     padding: 20px;
     padding-left: 20px;
 }
-.letra{
+
+.letra {
     font-size: 20pt;
     border-radius: 10px;
     border-style: solid;
@@ -24,35 +28,44 @@ body{
     display: inline-block;
 }
 
-img{
+img {
     display: block;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
 }
-h1{
+
+h1 {
     text-align: center;
 }
-.centrar{
+
+.centrar {
     margin: auto;
     width: 80%;
     padding: 10px;
 }
-.centrar-texto{
+
+.centrar-texto {
     text-align: center;
 }
 
-.letra-grande{
+.letra-grande {
     margin-top: 30px;
     font-size: 30pt;
 }
-.letras{
+
+.letras {
     display: inline-block;
 }
 
-.linea{
+.linea {
     border-bottom: solid black;
     margin-bottom: 2px;
     border-width: 2px;
     width: 40px;
+}
+
+#btinicio {
+    height: 120.52px;
+    width: 188px;
 }

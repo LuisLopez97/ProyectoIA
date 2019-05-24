@@ -1,12 +1,11 @@
-{% extends "layout.html" %}
-{% block content %}
-    <h1>Agregar palabra a adivinar</h1>
-    <br>
-    <form class="centrar-texto"  action="" method="POST">
-        <label for="palabra">Palabra a agregar:  </label>
-        <input id = "palabra" name = "palabra" type = "text" pattern="[A-Z a-z]*" maxlength="8" required>
-        <br><br>
-        <input type="submit" value="Agregar" class="btn-primary btn-lg">
-        <!-- <p>el tamaño es: {{tamaño}}</p> -->
-    </form>
+{% extends "layout.html" %} {% block content %}
+<h1>Agregar palabra a adivinar</h1>
+<br>
+<form class="centrar-texto" action="" method="POST">
+    <label for="palabra">Palabra a agregar:  </label>
+    <input id="palabra" name="palabra" type="password" pattern="[a-z]*" maxlength="15" required>
+    <br><br>
+    <input type="submit" value="Agregar" class="btn-primary btn-lg">
+    <!-- <p>el tamaño es: {{tamaño}}</p> -->
+</form>
 {% endblock %}
