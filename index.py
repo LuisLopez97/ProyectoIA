@@ -71,6 +71,4 @@ def recibir():
     return jsonify({'letra': letra, 'posicion': metodos.p})
 
 if __name__ == '__main__':
-    app.secret_key = '1234'
-    # app.config['SESSION_TYPE'] = 'filesystem'
-    app.run()
+    app.run() 
