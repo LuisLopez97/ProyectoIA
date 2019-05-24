@@ -51,7 +51,7 @@ def agregarPalabra():
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
         tamaño = metodos.obtenerTamaño(palabra)
-        #metodos.c=metodos.dividirPalabra(palabra)
+        metodos.c=metodos.dividirPalabra(palabra)
         print(tamaño)
         return render_template('main.html', tamaño=tamaño)
     else:
