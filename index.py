@@ -3,6 +3,7 @@ from flask import Flask, render_template
 #from flask_debugtoolbar import DebugToolbarExtension
 from flask import request
 from flask import jsonify
+from flask import Flask, session
 import metodos, random
 
 # acierto = 0
@@ -30,7 +31,7 @@ def home():
 def main():
     palabra = metodos.elegirPalabra()
     print(palabra)
-    c=metodos.dividirPalabra(palabra)
+    session['contenido'] = metodos.dividirPalabra(palabra)
     tamaño=metodos.obtenerTamaño(palabra)
     return render_template('main.html', tamaño=tamaño)
 
@@ -57,10 +58,11 @@ def agregarPalabra():
 def recibir():
     if request.method == 'GET':
         letra = request.args.get('letra')
-        c = metodos.dividirPalabra(palabra)
+        c = session.get('contenido')
         metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(c, letra, metodos.a, metodos.f, metodos.p)
-        # parametros = {'letra': letra, 'posicion' = str(metodos.p)}
     return jsonify({'letra': letra, 'posicion': metodos.p})
 
 if __name__ == '__main__':
+    app.secret_key = '1234'
+    # app.config['SESSION_TYPE'] = 'filesystem'
     app.run()
