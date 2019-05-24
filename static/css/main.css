@@ -52,6 +52,7 @@ h1{
 
 .linea{
     border-bottom: solid black;
+    margin-bottom: 2px;
     border-width: 2px;
     width: 40px;
 }
