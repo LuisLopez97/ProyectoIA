@@ -3,12 +3,13 @@ from flask import Flask, render_template
 #from flask_debugtoolbar import DebugToolbarExtension
 from flask import request
 from flask import jsonify
+from flask import Flask, session
 import metodos, random
 
 # acierto = 0
 # fallo= 0
 # posiciones = "vacio"
-#metodos.c = []
+# c = []
 
 app = Flask(__name__)
 ui = WebUI(app, debug=True)
@@ -50,7 +51,7 @@ def agregarPalabra():
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
         tamaño = metodos.obtenerTamaño(palabra)
-        metodos.c=metodos.dividirPalabra(palabra)
+        #metodos.c=metodos.dividirPalabra(palabra)
         print(tamaño)
         return render_template('main.html', tamaño=tamaño)
     else:

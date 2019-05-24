@@ -7,7 +7,6 @@ function generarEspacios(longitudPalabra) {
         input.setAttribute("class","linea");
         input.setAttribute("id", i+1);
         input.disabled = true;
-        // input.value = "A"
         element.appendChild(input);
     }
 }
