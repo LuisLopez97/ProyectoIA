@@ -48,6 +48,7 @@ def agregarPalabra():
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
         tamaño = metodos.obtenerTamaño(palabra)
+        #metodos.c=metodos.dividirPalabra(palabra)
         print(tamaño)
         return render_template('main.html', tamaño=tamaño)
     else:
@@ -59,6 +60,7 @@ def recibir():
     if request.method == 'GET':
         letra = request.args.get('letra')
         c = session.get('contenido')
+	print(metodos.c)
         metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(c, letra, metodos.a, metodos.f, metodos.p)
     return jsonify({'letra': letra, 'posicion': metodos.p})
 
