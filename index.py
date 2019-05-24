@@ -8,7 +8,7 @@ import metodos, random
 # acierto = 0
 # fallo= 0
 # posiciones = "vacio"
-# c = []
+#metodos.c = []
 
 app = Flask(__name__)
 ui = WebUI(app, debug=True)
@@ -30,7 +30,7 @@ def home():
 def main():
     palabra = metodos.elegirPalabra()
     print(palabra)
-    c=metodos.dividirPalabra(palabra)
+    metodos.c=metodos.dividirPalabra(palabra)
     tamaño=metodos.obtenerTamaño(palabra)
     return render_template('main.html', tamaño=tamaño)
 
@@ -47,6 +47,7 @@ def agregarPalabra():
         metodos.agregarDiccionario(palabra)
         print(metodos.diccionario)
         tamaño = metodos.obtenerTamaño(palabra)
+        metodos.c=metodos.dividirPalabra(palabra)
         print(tamaño)
         return render_template('main.html', tamaño=tamaño)
     else:
@@ -57,8 +58,10 @@ def agregarPalabra():
 def recibir():
     if request.method == 'GET':
         letra = request.args.get('letra')
-        c = metodos.dividirPalabra(palabra)
-        metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(c, letra, metodos.a, metodos.f, metodos.p)
+        #c = metodos.dividirPalabra(palabra)
+        print(metodos.c)
+        metodos.p, metodos.a, metodos.f = metodos.analizarRespuesta(metodos.c, letra, metodos.a, metodos.f, metodos.p)
+        
         # parametros = {'letra': letra, 'posicion' = str(metodos.p)}
     return jsonify({'letra': letra, 'posicion': metodos.p})
 
