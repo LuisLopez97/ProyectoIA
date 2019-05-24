@@ -6,7 +6,8 @@ f = 0
 #aciertos
 a = 0
 #posiciones
-p = "vacio"
+#p = "vacio"
+p = []
 #respuesta
 r = "vacio"
 #contenido
@@ -34,17 +35,18 @@ def obtenerTamaño(palabra):
 def analizarRespuesta(c,r,a,f,p):
     # print("Diga una letra")
     # r = str(input())
-    p = "vacio"
+    #p = "vacio"
+    p = []
     for x in range(len(c)):
         if(c[x]==r):
             #p = (c.index(r))+1
-            p = x+1
+            p.append(x+1)
             a+=1
             #mostrar la letra adivinada en pantalla
-            print("prueba",p)
+            #print("prueba",p)
             #llamar a ganar
-    if(p=="vacio"):
-        p = "vacio"
+    if(p==[]):
+        p = []
         f+=1
         #llamar a perder
         # try:
@@ -72,11 +74,11 @@ def analizarRespuesta(c,r,a,f,p):
 #print(t)
 
 #hay un detalle en el metodo analizarRespuesta por que solo arroja la ultima posicion obtenida, 
-#pero si busca todas las coincidencias
-# p,a,f = analizarRespuesta(['h','o','l','o'],a,f,p)
-# print(a)
-# print(f)
-# print(p)
+#pero si busca todas las coincidencias 
+#p,a,f = analizarRespuesta(['h','o','l','o'],"a",a,f,p)
+#print(a)
+#print(f)
+#print(p)
 # prueba = ["hola","adios"]
 # print(prueba[0])
 

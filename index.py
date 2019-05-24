@@ -63,9 +63,10 @@ def recibir():
         #posiciones="vacio"
         c=metodos.dividirPalabra(palabra)
         print(c)
-        p,metodos.a,metodos.f = metodos.analizarRespuesta(c,letra,metodos.a,metodos.f,metodos.p)
+        metodos.p,metodos.a,metodos.f = metodos.analizarRespuesta(c,letra,metodos.a,metodos.f,metodos.p)
         print(metodos.a)
         print(metodos.f)
+        print(metodos.p)
     else:
         print("no entro")
     return "hola 2"
